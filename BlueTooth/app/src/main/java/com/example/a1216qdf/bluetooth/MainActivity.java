@@ -329,14 +329,9 @@ public class MainActivity extends AppCompatActivity {
                 int read;
                 try {
                     read = input.read(buffer);
-//                    Log.i(TAG, "READDDD!!!!!!!!BYTES:" + String.valueOf(read));
-                    if (read != -1) {
-                        byte[] tempdata = new byte[read];
-                        System.arraycopy(buffer, 0, tempdata, 0, read);
-                        //tempdata從這裡接
-                        Log.i(TAG, "測試:" + tempdata);
+                    Log.i(TAG, "READDDD!!!!!!!!BYTES:" + String.valueOf(read));
+                    //28 97 106 129 134 138 144 166 176 235 263
 
-                    }
 
                 } catch (IOException e) {
                     // TODO: handle exception
