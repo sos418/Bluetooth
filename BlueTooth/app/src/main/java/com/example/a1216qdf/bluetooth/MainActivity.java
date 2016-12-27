@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
     public final static int REQUEST_CODE_GPS_PERMISSIONS = 0;
     private Button btnScan,btnConnect,btnDisconnect;
     private TextView tvState;
+    private byte[] buffer;
+    String decodes;
 
 
     @Override
@@ -323,12 +325,19 @@ public class MainActivity extends AppCompatActivity {
             }
             if (true) {
 
-                byte[] buffer = new byte[4096];
+                buffer = new byte[4096];
                 int read;
                 try {
                     read = input.read(buffer);
-                    //這邊read交給下一個人
-                    Log.i(TAG, "READDDD!!!!!!!!BYTES:" + String.valueOf(read));
+//                    Log.i(TAG, "READDDD!!!!!!!!BYTES:" + String.valueOf(read));
+                    if (read != -1) {
+                        byte[] tempdata = new byte[read];
+                        System.arraycopy(buffer, 0, tempdata, 0, read);
+
+                        decodes = new String(tempdata);
+                        Log.i(TAG, "測試:" + tempdata);
+
+                    }
 
                 } catch (IOException e) {
                     // TODO: handle exception
