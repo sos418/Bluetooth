@@ -325,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
             }
             if (true) {
 
-                buffer = new byte[4096];
+                buffer = new byte[512];
                 int read;
                 try {
                     read = input.read(buffer);
@@ -333,8 +333,7 @@ public class MainActivity extends AppCompatActivity {
                     if (read != -1) {
                         byte[] tempdata = new byte[read];
                         System.arraycopy(buffer, 0, tempdata, 0, read);
-
-                        decodes = new String(tempdata);
+                        //tempdata從這裡接
                         Log.i(TAG, "測試:" + tempdata);
 
                     }
