@@ -325,12 +325,13 @@ public class MainActivity extends AppCompatActivity {
             }
             if (true) {
 
-                buffer = new byte[512];
+                buffer = new byte[4096];
                 int read;
                 try {
                     read = input.read(buffer);
                     Log.i(TAG, "READDDD!!!!!!!!BYTES:" + String.valueOf(read));
-                    //28 97 106 129 134 138 144 166 176 235 263
+                    //給下一個人read
+
 
 
                 } catch (IOException e) {
